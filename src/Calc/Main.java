@@ -9,19 +9,20 @@ public class Main {
                 "Калькулятор работает только с арабскими,либо с римскими числами. \n" +
                 "Калькулятор работает только с целыми числами");
         Scanner scanner = new Scanner(System.in);
-        String inputData = scanner.nextLine();
+        String inputData = scanner.nextLine(); // Считывание примера с консоли
+        scanner.close();
         String output = calc(inputData);
         System.out.println(output);
     }
 
     public static String calc(String inputData) throws Exception {
-        String[] strings = inputData.split(" ");
+        String[] strings = inputData.split(" "); //Разбиение массива с пробелами
         int number_1, number_2, resultCalc = 0;
         String operation, Number_1, Number_2, Result = "";
         if (strings.length > 3) {
-            throw new Exception("введите пример в формате число;операция;число");
+            throw new Exception("введите пример в формате число;операция;число"); //Исключение,пример содержит больше 3 аргументов
         } else if (strings.length < 3) {
-            throw new Exception("строка не является математическим примером");
+            throw new Exception("строка не является математическим примером"); //Исключение,пример содержит меньше 3 аргументов
         }
         operation = strings[1];
         Number_1 = strings[0];
@@ -29,8 +30,8 @@ public class Main {
         try {
             number_1 = Integer.parseInt(Number_1);
             number_2 = Integer.parseInt(Number_2);
-            if (number_1 < 1 || number_1 > 10 || number_2 < 1 || number_2 > 10) {
-                throw new Exception("Арабские числа не входят в даипозон [1,10]");
+            if (number_1 < 1 || number_1 > 10 || number_2 < 1 || number_2 > 10) { //Проверка на соответствие диапазону от 1 до 10
+                throw new Exception("Арабские числа не входят в диапозон [1,10]");
             } else {
                 switch (operation) {
                     case "+" -> resultCalc = number_1 + number_2;
@@ -38,7 +39,7 @@ public class Main {
                     case "*" -> resultCalc = number_1 * number_2;
                     case "/" -> resultCalc = number_1 / number_2;
                     default -> {
-                        throw new Exception("арифметический знак не является  +/-/*//");
+                        throw new Exception("арифметический знак не является  +/-/*//"); //Введеная операция не соответствует требуемым
                     }
                 }
             }
@@ -80,7 +81,7 @@ public class Main {
                 case "*" -> resultCalc = number_1 * number_2;
                 case "/" -> resultCalc = number_1 / number_2;
                 default -> {
-                    throw new Exception("арифметический знак не явл. +/-/*//"); 
+                    throw new Exception("арифметический знак не явл. +/-/*//");
                 }
             }
             if (resultCalc < 1) {
