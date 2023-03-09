@@ -31,7 +31,7 @@ public class Main {
             number_1 = Integer.parseInt(Number_1);
             number_2 = Integer.parseInt(Number_2);
             if (number_1 < 1 || number_1 > 10 || number_2 < 1 || number_2 > 10) { //Проверка на соответствие диапазону от 1 до 10
-                throw new Exception("Арабские числа не входят в диапозон [1,10]");
+                throw new Exception("Арабские числа не входят в диапазон [1,10]");
             } else {
                 switch (operation) {
                     case "+" -> resultCalc = number_1 + number_2;
