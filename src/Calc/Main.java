@@ -30,7 +30,7 @@ public class Main {
             number_1 = Integer.parseInt(Number_1);
             number_2 = Integer.parseInt(Number_2);
             if (number_1 < 1 || number_1 > 10 || number_2 < 1 || number_2 > 10) {
-                throw new Exception("Арабские числа не входят в дипозон [1,10]");//исключение, т.к. числа не входят в диапозон [1, 10]
+                throw new Exception("Арабские числа не входят в даипозон [1,10]");
             } else {
                 switch (operation) {
                     case "+" -> resultCalc = number_1 + number_2;
@@ -38,7 +38,7 @@ public class Main {
                     case "*" -> resultCalc = number_1 * number_2;
                     case "/" -> resultCalc = number_1 / number_2;
                     default -> {
-                        throw new Exception("арифметический знак не является  +/-/*//"); //завершить работу программы
+                        throw new Exception("арифметический знак не является  +/-/*//");
                     }
                 }
             }
@@ -80,7 +80,7 @@ public class Main {
                 case "*" -> resultCalc = number_1 * number_2;
                 case "/" -> resultCalc = number_1 / number_2;
                 default -> {
-                    throw new Exception("арифметический знак не явл. +/-/*//"); //завершить работу программы
+                    throw new Exception("арифметический знак не явл. +/-/*//"); 
                 }
             }
             if (resultCalc < 1) {
